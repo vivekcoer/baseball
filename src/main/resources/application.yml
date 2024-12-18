@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    #url: jdbc:h2:mem:playerdb
+    url: jdbc:h2:file:./data/playerdb;AUTO_SERVER=TRUE
+    initialization-mode: embedded
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  config:
+    use-legacy-processing: true
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+  include-debug-info: true
+  error:
+    include-message: always
+
+logging:
+  level:
+    com.zaxxer.hikari.HikariConfig: DEBUG
